@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appnotes.R;
+import com.example.appnotes.repositories.NotaRepository;
 import com.example.appnotes.repositories.UserRepository;
 
 public class NotaRegistro extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class NotaRegistro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nota_registro);
 
-       titulo = findViewById(R.id.nota_titulo);
+       titulo = findViewById(R.id.titulo_nota);
        contenido = findViewById(R.id.contenido_nota);
 
 
@@ -33,6 +34,7 @@ public class NotaRegistro extends AppCompatActivity {
 
 
     public void callRegisterNotas(View view){
+
         String  titulo_registro = titulo.getText().toString();
         String contenido_registro = contenido.getText().toString();
 
@@ -46,7 +48,7 @@ public class NotaRegistro extends AppCompatActivity {
 
         }
 
-        UserRepository.createnota(titulo_registro, contenido_registro);
+        NotaRepository.createnota(titulo_registro, contenido_registro);
         finish();
 
     }

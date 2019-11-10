@@ -3,6 +3,7 @@ package com.example.appnotes.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,8 @@ import java.security.PublicKey;
 import java.util.List;
 
 public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.ViewHolder> {
+
+    private Button button_favorite, button_archivado;
 
     private List<Nota> notas;
     public NotaAdapter(List<Nota> notas){
@@ -49,9 +52,13 @@ public class NotaAdapter extends RecyclerView.Adapter<NotaAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+
         Nota nota = this.notas.get(position);
         viewHolder.titulo.setText(nota.getTitulo());
         viewHolder.contenido.setText(nota.getContenido());
+
+
+
     }
 
     @Override

@@ -4,7 +4,7 @@ import com.orm.dsl.Table;
 
 @Table
 public class Nota {
-
+    private Long id;
     private String titulo;
     private String contenido;
 
@@ -18,6 +18,13 @@ public class Nota {
         this.contenido = contenido;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -38,7 +45,8 @@ public class Nota {
     @Override
     public String toString() {
         return "Nota{" +
-                "titulo='" + titulo + '\'' +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
                 ", contenido='" + contenido + '\'' +
                 '}';
     }
